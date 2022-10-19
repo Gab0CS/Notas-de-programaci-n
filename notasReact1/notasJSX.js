@@ -17,3 +17,18 @@ const theExample = (
 /* */
 ReactDOM.render(<h1>Rendering..</h1>, document.getElementById('app'));
 
+/* The first argument could also be a variable, so long as that variable evaluates to a JSX expression.*/
+
+const toDoList = (
+    <ol>
+      <li>Learn React</li>
+      <li>Become a Developer</li>
+    </ol>
+  );
+   
+  ReactDOM.render(
+    toDoList, 
+    document.getElementById('app')
+  );
+
+  

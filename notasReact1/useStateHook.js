@@ -200,3 +200,48 @@ export default function EditProfile() {
         </form>
     );
 }
+
+//Separate hooks for separate states
+//It’s best to split state into multiple state variables based on which values tend to change together
+function Subject() {
+    const [currentGrade, setGrade] = useState('B');
+    const [classmates, setClassmates] = useState(['Hasan', 'Sam', 'Emma']);
+    const [classDetails, setClassDetails] = useState({topic: 'Math', teacher: 'Ms. Barry', room: 201});
+    const [exams, setExams] = useState([{unit: 1, score: 91}, {unit: 2, score: 88}]);
+    // ...
+}
+
+
+//Component that uses everything 
+export default function AppFunction() {
+    const [newTask, setNewTask] = useState({});
+    const handleChange = ({ target }) => {
+        const { name, value } = target;
+        setNewTask((prev) => ({ ...prev, id: Date.now(), [name]: value }));
+    };
+
+    const [allTasks, setAllTasks] = useState([]);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!newTask.title) return;
+        setAllTasks((prev) => [newTask, ...prev]);
+        setNewTask({});
+    };
+    const handleDelete = (taskIdToRemove) => {
+        setAllTasks((prev) => prev.filter(
+        (task) => task.id !== taskIdToRemove
+        ));
+    };
+
+    return (
+        <main>
+            <h1>Tasks</h1>
+            <NewTask
+            newTask={newTask}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            />
+            <TasksList allTasks={allTasks} handleDelete={handleDelete} />
+        </main>
+    );
+}

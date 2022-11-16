@@ -6,12 +6,6 @@
 //presentational component class only job is to contain JSX.
 import React from 'react';
 
-const GUINEAPATHS = [
-    'https://content.codecademy.com/courses/React/react_photo-guineapig-1.jpg',
-    'https://content.codecademy.com/courses/React/react_photo-guineapig-2.jpg',
-    'https://content.codecademy.com/courses/React/react_photo-guineapig-3.jpg',
-    'https://content.codecademy.com/courses/React/react_photo-guineapig-4.jpg'
-];
 export class GuineaPigs extends React.Component {
     render() {
         let src = this.props.src;
@@ -29,7 +23,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { GuineaPigs } from '../components/GuineaPigs';
 
-const GUINEAPATHS2 = [
+const GUINEAPATHS = [
     'https://content.codecademy.com/courses/React/react_photo-guineapig-1.jpg',
     'https://content.codecademy.com/courses/React/react_photo-guineapig-2.jpg',
     'https://content.codecademy.com/courses/React/react_photo-guineapig-3.jpg',

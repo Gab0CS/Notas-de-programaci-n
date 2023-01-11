@@ -51,7 +51,7 @@ const todosSlice2 = createSlice({
             }
         }
     }
-})
+}) 
 
 /* Object returned by todosSlice */
 const objectRetuned = {

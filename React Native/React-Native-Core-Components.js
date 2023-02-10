@@ -78,3 +78,44 @@ const AppButton = () => {
 
 
 //Text input
+
+const AppText = () => {
+    const [name, setName] = useState('');
+
+    return (
+        <View style={{
+            flex: 1,
+            alignContent: 'center', 
+            justifyContent: 'center', 
+            padding: 16,
+        }}>
+            <Text style={{ marginVertical: 16 }}>
+            {name ? `Hi ${name}!` : 'What is your name?'}
+            </Text>
+            <TextInput
+            style={{ padding: 8, backgroundColor: '#f5f5f5' }}
+            onChangeText={text => setName(text)}
+            secureTextEntry={true}/>
+        </View>
+    );
+};
+
+// Combining components
+// It’s a good practice to create custom components that apply this styling within your app.
+//Creating custom components is similar to React. We can create a function and render it as a component. 
+// When creating a custom component, it’s important to think about the features it needs to support.
+
+const AppCombined = () => (
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+        <Box color= 'red'/>
+        <Box color= 'green'/>
+        <Box color= 'blue'/>
+    </View>
+);  
+
+export default App;
+
+export const Box = (props) => (
+    // Move a box `View` component here
+    <View style={{ width: 100, height: 100, backgroundColor: props.color }} />
+);

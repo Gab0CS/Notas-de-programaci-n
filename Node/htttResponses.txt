@@ -1,0 +1,48 @@
+HTTP structure
+HTTP requests and responses have specific structures to help facilitate the exchange 
+of information between a client and a server. These structures encapsulate all of the 
+important information required to instruct the recipient of the message on how to react.
+
+Requests
+Requests are comprised of a few core elements that provide information to a server
+
+HTTP Method: The HTTP method is usually a verb, such as GET and POST, or a noun such as OPTIONS and HEAD.
+methods inform the server of the intent of the request and are used in accurately routing and processing requests.
+For example: An HTTP request containing a GET method implies that the client wants to fetch a resource.
+
+Path: The path denotes the path of the resource relative to the root URL.
+
+HTTP Protocol Version: The version of the HTTP protocol
+
+Headers: Headers are optional and are used to convey additional information that may be important in processing a request by a server.
+
+Body: The body contains data required to be sent to the server to process a request. The body is not leveraged for all request types. 
+It is most common to see a body attached to requests with verbs such as POST, PUT, and PATCH.
+
+
+Responses
+Responses are comprised of similar elements to their counterpart requests
+1) HTTP Protocol Version: The version of the HTTP protocol, similar to the request.
+2) Status Code: Status code indicates if the request was successful and, if not, why it wasn’t successful.
+3) Status Message: Status message provides a short description of the corresponding status code.
+4) Headers: These response headers are similar to those provided in a request.
+5) Body: The body of a response contains data corresponding to the fetched resource.
+
+Movement of HTTP
+
+
+TCP
+TCP stands for Transmission Control Protocol and allows two hosts to connect and exchange data streams,
+guaranteeing the delivery of data packets in the same order as they were sent.
+
+UDP
+User Datagram Protocol operates using a connectionless communication model
+UDP has no mechanism by which to guarantee delivery or ordering of messages. 
+While these are certainly drawbacks for some types of applications, other applications 
+that want to prioritize transmission speed and efficiency over security and reliability may leverage UDP
+
+TLS
+Transport Layer Security, is a widely adopted security protocol designed to facilitate secure data transmission via encryption.
+LS evolved out of the encryption protocol known as SSL (Secure Sockets Layer), which has since been deprecated in favor of TLS. 
+While these two protocols are different, the terms are sometimes used interchangeably.
+ Using TLS with HTTP will allow you to use HTTPS

@@ -71,4 +71,3 @@ SELECT name,
         ELSE 'Avoid at All Costs'
     END AS 'Review'
 FROM movies;
-
